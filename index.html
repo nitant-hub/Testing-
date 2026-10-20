@@ -3,172 +3,75 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CalcHub - Online Calculation Platform</title>
+  <title>Smart Calculation Hub</title>
   <style>
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-family: system-ui, -apple-system, sans-serif;
     }
-
     body {
-      background-color: #f4f6f9;
+      background: #f4f6f9;
       color: #1e293b;
-      line-height: 1.5;
     }
-
-    /* Header */
     header {
       background: #0f172a;
-      color: #ffffff;
-      padding: 16px 20px;
+      color: #fff;
+      padding: 20px;
       text-align: center;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
     }
-
-    header h1 {
-      font-size: 1.5rem;
-      letter-spacing: 0.5px;
-    }
-
     header p {
-      font-size: 0.85rem;
       color: #94a3b8;
+      font-size: 0.9rem;
       margin-top: 4px;
     }
-
-    /* Main Container */
     .container {
       max-width: 800px;
       margin: 24px auto;
       padding: 0 16px;
     }
-
-    /* Calculator Card */
-    .calc-card {
-      background: #ffffff;
+    .card {
+      background: #fff;
       border-radius: 12px;
-      padding: 24px;
+      padding: 20px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-      margin-bottom: 24px;
     }
-
-    .calc-card h2 {
+    .card h2 {
+      margin-bottom: 6px;
       font-size: 1.25rem;
-      margin-bottom: 8px;
-      color: #0f172a;
     }
-
-    .calc-card p.desc {
-      font-size: 0.9rem;
+    .desc {
       color: #64748b;
+      font-size: 0.9rem;
       margin-bottom: 16px;
     }
-
-    /* Inputs & Buttons */
-    .input-group {
-      display: flex;
-      gap: 10px;
-      margin-bottom: 20px;
-      flex-wrap: wrap;
-    }
-
-    input[type="number"] {
-      flex: 1;
-      min-width: 180px;
-      padding: 12px 14px;
-      font-size: 1rem;
-      border: 1px solid #cbd5e1;
-      border-radius: 8px;
-      outline: none;
-    }
-
-    input[type="number"]:focus {
-      border-color: #2563eb;
-    }
-
-    button {
-      background: #2563eb;
-      color: #ffffff;
-      border: none;
-      padding: 12px 20px;
-      font-size: 1rem;
-      font-weight: 600;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-
-    button:hover {
-      background: #1d4ed8;
-    }
-
-    /* Planet Results Grid */
-    .planet-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-      gap: 12px;
-    }
-
-    .planet-box {
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
-      border-radius: 8px;
-      padding: 12px;
-      text-align: center;
-    }
-
-    .planet-name {
-      font-size: 0.85rem;
-      color: #64748b;
-      font-weight: 600;
-    }
-
-    .planet-weight {
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: #0f172a;
-      margin-top: 4px;
-    }
-
-    /* Directory Links for Other Calculators */
     .grid-links {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 12px;
     }
-
     .tool-link {
       display: block;
       text-decoration: none;
-      background: #ffffff;
+      background: #f8fafc;
       padding: 16px;
       border-radius: 10px;
-      border: 1px solid #e2e8f0;
+      border: 1px solid #cbd5e1;
       color: #0f172a;
       font-weight: 600;
-      transition: transform 0.15s, border-color 0.15s;
+      transition: 0.2s;
     }
-
     .tool-link:hover {
       border-color: #2563eb;
-      transform: translateY(-2px);
+      background: #eff6ff;
     }
-
     .tool-link span {
       display: block;
       font-size: 0.8rem;
-      color: #64748b;
+      color: #2563eb;
       font-weight: 400;
       margin-top: 4px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 0.85rem;
-      color: #64748b;
     }
   </style>
 </head>
@@ -176,84 +79,56 @@
 
   <header>
     <h1>⚡ Smart Calculation Hub</h1>
-    <p>Fast, interactive web calculators</p>
+    <p>Automatically loads calculators from the Tools folder</p>
   </header>
 
   <div class="container">
-    <!-- Built-in Cosmos Weight Calculator -->
-    <div class="calc-card">
-      <h2>🪐 Cosmos Weight Calculator</h2>
-      <p class="desc">Enter your weight on Earth (kg) to see your weight across the solar system.</p>
-      
-      <div class="input-group">
-        <input type="number" id="earthWeight" placeholder="Enter weight in kg (e.g. 70)" oninput="calculateCosmos()">
-        <button onclick="calculateCosmos()">Calculate</button>
-      </div>
-
-      <div class="planet-grid">
-        <div class="planet-box">
-          <div class="planet-name">🌙 Moon</div>
-          <div class="planet-weight" id="w-moon">0 kg</div>
-        </div>
-        <div class="planet-box">
-          <div class="planet-name">🔴 Mars</div>
-          <div class="planet-weight" id="w-mars">0 kg</div>
-        </div>
-        <div class="planet-box">
-          <div class="planet-name">🟠 Jupiter</div>
-          <div class="planet-weight" id="w-jupiter">0 kg</div>
-        </div>
-        <div class="planet-box">
-          <div class="planet-name">🪐 Saturn</div>
-          <div class="planet-weight" id="w-saturn">0 kg</div>
-        </div>
-        <div class="planet-box">
-          <div class="planet-name">🟡 Venus</div>
-          <div class="planet-weight" id="w-venus">0 kg</div>
-        </div>
-        <div class="planet-box">
-          <div class="planet-name">☀️ The Sun</div>
-          <div class="planet-weight" id="w-sun">0 kg</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Links to other calculators in your repository -->
-    <div class="calc-card">
-      <h2>📂 More Calculators</h2>
+    <div class="card">
+      <h2>📂 Available Calculators</h2>
       <p class="desc">Tap any calculator below to open it:</p>
-      <div class="grid-links">
-        <a href="cosmos.html" class="tool-link">
-          🌌 Full Cosmos Calculator
-          <span>Opens cosmos.html</span>
-        </a>
-        <a href="bmi.html" class="tool-link">
-          ⚖️ BMI Calculator
-          <span>Opens bmi.html</span>
-        </a>
-        <a href="emi.html" class="tool-link">
-          💰 Loan EMI Calculator
-          <span>Opens emi.html</span>
+
+      <!-- Calculators from the Tools folder load here automatically -->
+      <div id="calculator-list" class="grid-links">
+        <a href="Tools/Cosmos.html" class="tool-link">
+          🧮 Cosmos Calculator
+          <span>Open Tools/Cosmos.html →</span>
         </a>
       </div>
     </div>
   </div>
 
-  <footer>
-    &copy; 2026 Smart Calculation Hub
-  </footer>
-
   <script>
-    function calculateCosmos() {
-      const weight = parseFloat(document.getElementById('earthWeight').value) || 0;
-      
-      document.getElementById('w-moon').innerText = (weight * 0.165).toFixed(2) + ' kg';
-      document.getElementById('w-mars').innerText = (weight * 0.378).toFixed(2) + ' kg';
-      document.getElementById('w-jupiter').innerText = (weight * 2.528).toFixed(2) + ' kg';
-      document.getElementById('w-saturn').innerText = (weight * 1.065).toFixed(2) + ' kg';
-      document.getElementById('w-venus').innerText = (weight * 0.904).toFixed(2) + ' kg';
-      document.getElementById('w-sun').innerText = (weight * 27.01).toFixed(2) + ' kg';
+    // Automatically scans your GitHub "Tools" folder and adds links
+    async function loadCalculatorsAutomatically() {
+      const repoOwner = "nitant-hub";
+      const repoName = "Testing-";
+      const folderName = "Tools";
+      const listContainer = document.getElementById("calculator-list");
+
+      try {
+        const response = await fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/contents/${folderName}`);
+        if (!response.ok) return; // Keeps fallback link if repo is still Private
+
+        const files = await response.json();
+        const htmlFiles = files.filter(file => file.name.toLowerCase().endsWith(".html"));
+
+        if (htmlFiles.length > 0) {
+          listContainer.innerHTML = ""; // Clear fallback and list all tools automatically
+          htmlFiles.forEach(file => {
+            const cleanTitle = file.name.replace(/\.html$/i, "").replace(/[-_]/g, " ");
+            const card = document.createElement("a");
+            card.href = `${folderName}/${file.name}`;
+            card.className = "tool-link";
+            card.innerHTML = `🧮 ${cleanTitle} Calculator <span>Open ${folderName}/${file.name} →</span>`;
+            listContainer.appendChild(card);
+          });
+        }
+      } catch (error) {
+        console.log("Using default calculator link.");
+      }
     }
+
+    loadCalculatorsAutomatically();
   </script>
 
 </body>
