@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cosmos Weight Calculator | thequantcals</title>
+    <title>Cosmos Weight Calculator | TheQuantCalc</title>
     
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "WebSite",
-      "name": "thequantcals",
-      "url": "https://thequantcals.com",
+      "name": "TheQuantCalc",
+      "url": "https://nitant-hub.github.io/Testing-/",
       "description": "Calculate your Cosmic Weight on different planets for free."
     }
     </script>
@@ -24,7 +24,7 @@
             --text-muted: #64748b;
             --border-color: #e2e8f0;
             --accent-gradient: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
-            --header-height: 55px; 
+            --header-height: 58px; 
         }
 
         [data-theme="dark"] {
@@ -42,24 +42,36 @@
         h1, h2, h3, h4, h5, h6 { line-height: 1.38 !important; }
         p, li, label, span, td, th, option, select, input, button { line-height: 1.33 !important; }
 
-        /* Header - GUARANTEED FIXED POSITION */
+        /* Header - Styled to match TheQuantCalc visual */
         header#siteHeader {
             position: fixed; top: 0; left: 0; width: 100%; height: var(--header-height); z-index: 10000;
-            background: linear-gradient(135deg, #020818 0%, #0d1f5c 40%, #1a3a8f 75%, #0e2d6b 100%);
+            background: linear-gradient(90deg, #0b2239 0%, #1e2563 55%, #0d122b 100%);
             border-bottom: 1px solid rgba(99, 179, 255, 0.25);
-            box-shadow: 0 4px 30px rgba(10, 20, 80, 0.6); padding: 0 1.5rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.45); padding: 0 1.25rem;
             display: flex; justify-content: space-between; align-items: center;
             transition: transform 0.3s ease-in-out;
         }
 
-        .brand { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
-        .logo-symbol { background: var(--accent-gradient); width: 32px; height: 32px; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 1.1rem; box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2); }
-        .brand-title { font-size: 1.25rem; font-weight: 800; letter-spacing: -0.5px; background: linear-gradient(90deg, #e0f2fe 0%, #bae6fd 60%, #c7d2fe 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .brand { display: flex; align-items: center; text-decoration: none; }
+        .brand-title { font-size: 1.55rem; font-weight: 800; font-style: italic; letter-spacing: -0.5px; color: #ffffff; }
+        .brand-title span { background: linear-gradient(90deg, #2dd4bf 0%, #34d399 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
-        .nav-actions { display: flex; align-items: center; gap: 1.2rem; }
-        .theme-toggle { background: none; border: none; font-size: 1.4rem; cursor: pointer; color: #ffffff; padding: 4px; }
-        .menu-btn { background: none; border: none; cursor: pointer; display: flex; flex-direction: column; gap: 5px; z-index: 1001; }
-        .menu-btn span { width: 24px; height: 3px; background-color: #ffffff; border-radius: 2px; }
+        .nav-actions { display: flex; align-items: center; gap: 0.65rem; }
+        .theme-toggle, .menu-btn {
+            background: rgba(30, 41, 59, 0.75);
+            border: 1px solid rgba(148, 163, 184, 0.3);
+            border-radius: 10px;
+            width: 42px;
+            height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: #ffffff;
+        }
+        .theme-toggle { font-size: 1.2rem; }
+        .menu-btn { flex-direction: column; gap: 4px; z-index: 1001; }
+        .menu-btn span { width: 20px; height: 2.5px; background-color: #ffffff; border-radius: 2px; }
         
         /* Mobile Menu */
         .nav-menu { position: fixed; top: 0; right: -300px; width: 300px; height: 100vh; background: var(--bg-surface); border-left: 1px solid var(--border-color); padding: 5rem 2rem 2rem 2rem; display: flex; flex-direction: column; gap: 1.2rem; transition: right 0.3s ease; box-shadow: -10px 0 30px rgba(0,0,0,0.05); z-index: 10001; }
@@ -130,8 +142,8 @@
             margin-bottom: 20px;
             padding-left: 14px;
             padding-bottom: 8px;
-            border-left: 5px solid #3b82f6; /* Vibrant Blue Left */
-            border-bottom: 2px solid #dbeafe; /* Very Light Blue Bottom */
+            border-left: 5px solid #3b82f6;
+            border-bottom: 2px solid #dbeafe;
         }
         
         .content-section h3 {
@@ -141,8 +153,8 @@
             margin-bottom: 15px;
             padding-left: 12px;
             padding-bottom: 6px;
-            border-left: 5px solid #8b5cf6; /* Elegant Purple Left */
-            border-bottom: 2px solid #ede9fe; /* Very Light Purple Bottom */
+            border-left: 5px solid #8b5cf6;
+            border-bottom: 2px solid #ede9fe;
         }
 
         .content-section h4 {
@@ -152,8 +164,8 @@
             margin-bottom: 12px;
             padding-left: 10px;
             padding-bottom: 5px;
-            border-left: 4px solid #10b981; /* Fresh Emerald Left */
-            border-bottom: 2px solid #d1fae5; /* Very Light Emerald Bottom */
+            border-left: 4px solid #10b981;
+            border-bottom: 2px solid #d1fae5;
         }
 
         /* Dark Mode Adjustments for the Headings */
@@ -200,26 +212,25 @@
 <body>
 
     <header id="siteHeader">
-        <a href="/" class="brand">
-            <div class="logo-symbol">&sum;</div>
-            <div class="brand-title">thequantcals</div>
+        <a href="/Testing-/" class="brand">
+            <div class="brand-title">The<span>QuantCalc</span></div>
         </a>
         <div class="nav-actions">
-            <button class="theme-toggle" id="themeToggle">🌙</button>
-            <button class="menu-btn" id="menuBtn"><span></span><span></span><span></span></button>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">🌙</button>
+            <button class="menu-btn" id="menuBtn" aria-label="Open Menu"><span></span><span></span><span></span></button>
         </div>
         <nav class="nav-menu" id="navMenu">
-            <button id="closeMenuBtn" class="close-menu-btn">×</button>
-            <a href="/">🏠 Home Base</a>
-            <a href="/#finance">📈 Finance Tools</a>
-            <a href="/#physics">🚀 Physics Tools</a>
+            <button id="closeMenuBtn" class="close-menu-btn" aria-label="Close Menu">×</button>
+            <a href="/Testing-/">🏠 Home Base</a>
+            <a href="/Testing-/#finance">📈 Finance Tools</a>
+            <a href="/Testing-/#physics">🚀 Physics Tools</a>
         </nav>
     </header>
 
     <div class="wrapper">
         
         <div class="breadcrumb">
-            <a href="/">home</a> / <a href="/#physics">physics</a> / cosmos weight calculator
+            <a href="/Testing-/">home</a> / <a href="/Testing-/#physics">physics</a> / cosmos weight calculator
         </div>
 
         <div class="layout-grid">
@@ -383,7 +394,7 @@
                     <p style="color: var(--text-muted); font-size: 16px;">If a person steps on a scale on Earth and it reads exactly 100 kg, the circles below represent what that exact same scale would read if they stood on Mars or Jupiter.</p>
 
                     <div style="background: var(--bg-primary); border-radius: 12px; border: 1px solid var(--border-color); margin: 30px 0px; padding: 20px; text-align: center;">
-                      <svg height="100%" style="max-width: 300px;" viewbox="0 0 400 400" width="100%">
+                      <svg height="100%" style="max-width: 300px;" viewBox="0 0 400 400" width="100%">
                         <circle cx="200" cy="200" fill="#fca5a5" r="180"></circle>
                         <circle cx="200" cy="200" fill="#38bdf8" r="100"></circle>
                         <circle cx="200" cy="200" fill="#fb923c" r="38"></circle>
@@ -450,9 +461,9 @@
                     <h2>External Resources for Planetary Science</h2>
                     <p style="color: var(--text-muted); font-size: 16px;">To read more about planetary data and orbital mechanics, refer to these scientific resources:</p>
                     <ul style="color: var(--text-muted); font-size: 16px; margin-left: 20px;">
-                      <li><a href="https://solarsystem.nasa.gov/" style="color: #2563eb; font-weight: bold; text-decoration: none;" target="_blank">NASA's Solar System Exploration</a>: Data on orbital paths, planetary models, and current space missions.</li>
-                      <li><a href="https://nssdc.gsfc.nasa.gov/planetary/factsheet/" style="color: #2563eb; font-weight: bold; text-decoration: none;" target="_blank">The NASA Planetary Fact Sheet</a>: A primary dataset for the mass, radius, and gravity metrics of bodies in our solar system.</li>
-                      <li><a href="https://www.esa.int/Science_Exploration/Space_Science/Relativity_and_gravity" style="color: #2563eb; font-weight: bold; text-decoration: none;" target="_blank">ESA: Relativity and Gravity</a>: Literature from the European Space Agency explaining the broader mechanics of gravity and physics.</li>
+                      <li><a href="https://solarsystem.nasa.gov/" style="color: #2563eb; font-weight: bold; text-decoration: none;" target="_blank" rel="noopener">NASA's Solar System Exploration</a>: Data on orbital paths, planetary models, and current space missions.</li>
+                      <li><a href="https://nssdc.gsfc.nasa.gov/planetary/factsheet/" style="color: #2563eb; font-weight: bold; text-decoration: none;" target="_blank" rel="noopener">The NASA Planetary Fact Sheet</a>: A primary dataset for the mass, radius, and gravity metrics of bodies in our solar system.</li>
+                      <li><a href="https://www.esa.int/Science_Exploration/Space_Science/Relativity_and_gravity" style="color: #2563eb; font-weight: bold; text-decoration: none;" target="_blank" rel="noopener">ESA: Relativity and Gravity</a>: Literature from the European Space Agency explaining the broader mechanics of gravity and physics.</li>
                     </ul>
 
                 </div>
@@ -462,9 +473,9 @@
             <aside class="sidebar">
                 <h3>🔥 Popular Tools</h3>
                 <ul class="sidebar-list">
-                    <li><a href="/tools/Compound-Interest-Calculator.html">⭐ Compound Interest</a></li>
-                    <li><a href="/tools/accurate-age-calculator.html">⭐ Age Calculator</a></li>
-                    <li><a href="/tools/Exam-Marks-Percentage-Calculator.html">⭐ Exam Marks Calculator</a></li>
+                    <li><a href="/Testing-/Tools/Compound-Interest-Calculator.html">⭐ Compound Interest</a></li>
+                    <li><a href="/Testing-/Tools/accurate-age-calculator.html">⭐ Age Calculator</a></li>
+                    <li><a href="/Testing-/Tools/Exam-Marks-Percentage-Calculator.html">⭐ Exam Marks Calculator</a></li>
                 </ul>
                 <h3 style="margin-top: 2rem;">System Status</h3>
                 <p style="font-size: 0.88rem; color: var(--text-muted);">All tools process locally in your browser.</p>
@@ -474,7 +485,7 @@
     </div>
 
     <footer>
-        <p>&copy; 2026 thequantcals. All rights reserved.</p>
+        <p>&copy; 2026 TheQuantCalc. All rights reserved.</p>
     </footer>
 
     <script>
@@ -501,7 +512,7 @@
         window.addEventListener('scroll', () => {
             const currentScrollY = window.scrollY;
             if (currentScrollY <= 0) { mainHeader.style.transform = 'translateY(0)'; return; }
-            if (currentScrollY > lastScrollY && currentScrollY > 55) { mainHeader.style.transform = 'translateY(-100%)'; } 
+            if (currentScrollY > lastScrollY && currentScrollY > 58) { mainHeader.style.transform = 'translateY(-100%)'; } 
             else { mainHeader.style.transform = 'translateY(0)'; }
             lastScrollY = currentScrollY;
         });
