@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Source Code Viewer</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #0f172a;
+      color: #f8fafc;
+      font-family: system-ui, -apple-system, sans-serif;
+      padding: 20px;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #334155;
+      padding-bottom: 16px;
+    }
+    h2 { font-size: 1.1rem; color: #94a3b8; }
+    a.back-btn {
+      color: #38bdf8;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 6px 12px;
+      background: #1e293b;
+      border-radius: 6px;
+    }
+    a.back-btn:hover { background: #334155; }
+    pre {
+      background: #1e293b;
+      padding: 20px;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      color: #e2e8f0;
+      border: 1px solid #334155;
+      white-space: pre-wrap; /* wraps long lines of code */
+      word-wrap: break-word;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <a href="index.html" class="back-btn">← Back to Hub</a>
+    <h2 id="filename">Loading file...</h2>
+  </div>
+
+  <pre><code id="code-display">Fetching source code...</code></pre>
+
+  <script>
+    // Grabs the "?file=..." part of the URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const fileToLoad = urlParams.get('file');
+
+    if (fileToLoad) {
+      document.getElementById('filename').textContent = `📄 ${fileToLoad}`;
+      
+      // Fetches the raw HTML text of the requested tool
+      fetch(fileToLoad)
+        .then(response => {
+          if (!response.ok) throw new Error("File not found");
+          return response.text();
+        })
+        .then(code => {
+          // textContent automatically escapes the HTML brackets
+          document.getElementById('code-display').textContent = code;
+        })
+        .catch(error => {
+          document.getElementById('code-display').textContent = `Error: Could not load ${fileToLoad}. Make sure the file exists.`;
+        });
+    } else {
+      document.getElementById('filename').textContent = "No file specified.";
+      document.getElementById('code-display').textContent = "Please select a file from the index to view its code.";
+    }
+  </script>
+
+</body>
+</html>
